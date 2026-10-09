@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexora Games</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+    <header class="header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                <img src="assets/logo/logo.png" alt="Nexora Games">
+            </a>
+
+            <nav class="nav">
+                <a href="#inicio">Início</a>
+                <a href="#jogos">Jogos</a>
+                <a href="#categorias">Categorias</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="campoBusca"
+                        placeholder="Buscar jogos..."
+                        autocomplete="off"
+                    >
+
+                    <button id="btnBuscar" type="button">
+                        🔍
+                    </button>
+                </div>
+
+                <button
+                    class="cart-button"
+                    id="btnCarrinho"
+                    type="button"
+                    aria-label="Abrir carrinho"
+                >
+                    🛒
+                    <span id="contadorCarrinho">0</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+    <main>
+
+        <!-- HERO / BANNER -->
+        <section class="hero" id="inicio">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">
+                    NEXORA GAMES
+                </span>
+
+                <h1>
+                    Seu próximo jogo
+                    <span>começa aqui.</span>
+                </h1>
+
+                <p>
+                    Descubra novos mundos, encontre seus jogos favoritos
+                    e monte sua próxima aventura.
+                </p>
+
+                <a href="#jogos" class="hero-button">
+                    Explorar jogos
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CATEGORIAS
+        ========================== -->
+        <section class="categories-section" id="categorias">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Categorias
+                    </h2>
+                </div>
+
+            </div>
+
+            <div class="category-list" id="listaCategorias">
+
+                <button
+                    class="category-button active"
+                    data-genero="Todos"
+                    type="button"
+                >
+                    Todos
+                </button>
+
+                <button
+                    class="category-button"
+                    data-genero="Ação"
+                    type="button"
+                >
+                    Ação
+                </button>
+
+                <button
+                    class="category-button"
+                    data-genero="Aventura"
+                    type="button"
+                >
+                    Aventura
+                </button>
+
+                <button
+                    class="category-button"
+                    data-genero="RPG"
+                    type="button"
+                >
+                    RPG
+                </button>
+
+                <button
+                    class="category-button"
+                    data-genero="FPS"
+                    type="button"
+                >
+                    FPS
+                </button>
+
+                <button
+                    class="category-button"
+                    data-genero="Estratégia"
+                    type="button"
+                >
+                    Estratégia
+                </button>
+
+                <button
+                    class="category-button"
+                    data-genero="Terror"
+                    type="button"
+                >
+                    Terror
+                </button>
+
+                <button
+                    class="category-button"
+                    data-genero="Corrida"
+                    type="button"
+                >
+                    Corrida
+                </button>
+
+                <button
+                    class="category-button"
+                    data-genero="Esportes"
+                    type="button"
+                >
+                    Esportes
+                </button>
+
+                <button
+                    class="category-button"
+                    data-genero="Indie"
+                    type="button"
+                >
+                    Indie
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CATÁLOGO
+        ========================== -->
+        <section class="games-section" id="jogos">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="section-label">
+                        CATÁLOGO
+                    </span>
+
+                    <h2>
+                        Jogos em destaque
+                    </h2>
+                </div>
+
+                <div class="catalog-controls">
+
+                    <select id="filtroPlataforma">
+                        <option value="Todos">
+                            Todas as plataformas
+                        </option>
+
+                        <option value="PC">
+                            PC
+                        </option>
+
+                        <option value="PlayStation">
+                            PlayStation
+                        </option>
+
+                        <option value="Xbox">
+                            Xbox
+                        </option>
+
+                        <option value="Nintendo">
+                            Nintendo
+                        </option>
+
+                        <option value="Mobile">
+                            Mobile
+                        </option>
+                    </select>
+
+                    <select id="filtroPreco">
+
+                        <option value="Todos">
+                            Todos os preços
+                        </option>
+
+                        <option value="gratis">
+                            Grátis
+                        </option>
+
+                        <option value="50">
+                            Até R$ 50
+                        </option>
+
+                        <option value="100">
+                            R$ 50 – R$ 100
+                        </option>
+
+                        <option value="200">
+                            R$ 100 – R$ 200
+                        </option>
+
+                        <option value="acima200">
+                            Acima de R$ 200
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!--
+                Os cards dos jogos serão
+                inseridos pelo JavaScript.
+            -->
+            <div
+                class="games-grid"
+                id="listaJogos"
+            >
+            </div>
+
+
+            <!-- Mensagem quando nenhum jogo for encontrado -->
+            <div
+                class="empty-state"
+                id="nenhumJogo"
+                hidden
+            >
+                <div class="empty-icon">
+                    🎮
+                </div>
+
+                <h3>
+                    Nenhum jogo encontrado
+                </h3>
+
+                <p>
+                    Tente alterar os filtros ou realizar outra busca.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         MODAL DE DETALHES
+    ========================== -->
+    <div
+        class="modal-overlay"
+        id="modalDetalhes"
+        hidden
+    >
+
+        <div class="game-modal">
+
+            <button
+                class="modal-close"
+                id="fecharModal"
+                type="button"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+            <div
+                class="modal-content"
+                id="conteudoModal"
+            >
+                <!-- Preenchido pelo JavaScript -->
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MODAL DO CARRINHO
+    ========================== -->
+    <div
+        class="modal-overlay"
+        id="modalCarrinho"
+        hidden
+    >
+
+        <div class="cart-modal">
+
+            <div class="cart-header">
+
+                <div>
+                    <span class="section-label">
+                        SUA COMPRA
+                    </span>
+
+                    <h2>
+                        Carrinho
+                    </h2>
+                </div>
+
+                <button
+                    class="modal-close"
+                    id="fecharCarrinho"
+                    type="button"
+                    aria-label="Fechar carrinho"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                class="cart-items"
+                id="listaCarrinho"
+            >
+                <!-- Preenchido pelo JavaScript -->
+            </div>
+
+
+            <div class="cart-footer">
+
+                <div class="cart-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="valorTotalCarrinho">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+                <button
+                    class="checkout-button"
+                    id="btnFinalizarCompra"
+                    type="button"
+                >
+                    Finalizar compra
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <img
+                    src="assets/logo/logo.png"
+                    alt="Nexora Games"
+                >
+
+                <p>
+                    Sua próxima aventura começa aqui.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+                    <h3>
+                        NEXORA
+                    </h3>
+
+                    <a href="#inicio">
+                        Início
+                    </a>
+
+                    <a href="#jogos">
+                        Jogos
+                    </a>
+
+                    <a href="#categorias">
+                        Categorias
+                    </a>
+                </div>
+
+
+                <div>
+                    <h3>
+                        PROJETO
+                    </h3>
+
+                    <a href="#">
+                        Sobre nós
+                    </a>
+
+                    <a href="#">
+                        Contato
+                    </a>
+                    <a href="admin/index.html" class="admin-link"> 
+                        Área administrativa 
+                    </a> 
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Nexora Games. Projeto acadêmico.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript principal -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

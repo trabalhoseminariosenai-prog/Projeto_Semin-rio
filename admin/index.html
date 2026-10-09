@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administração | NEXORA GAMES</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <span class="brand-icon">N</span>
+            <div>
+                <h2>NEXORA</h2>
+                <span>GAMES ADMIN</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-link active">
+                <span>▦</span> Visão geral
+            </a>
+
+            <a href="#jogos" class="nav-link">
+                <span>🎮</span> Catálogo de jogos
+            </a>
+
+            <a href="avaliacoes/index.html" class="nav-link">
+                <span>⭐</span> Avaliações
+            </a>
+
+            <a href="../index.html" class="nav-link">
+                <span>↗</span> Ver loja
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            Painel administrativo
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">NEXORA GAMES / ADMINISTRAÇÃO</p>
+                <h1>Painel administrativo</h1>
+                <p class="subtitle">
+                    Gerencie o catálogo da sua loja de games.
+                </p>
+            </div>
+
+            <a href="../index.html" class="view-store-button">
+                ↗ Visualizar loja
+            </a>
+
+        </header>
+
+
+        <!-- VISÃO GERAL -->
+        <section id="dashboard" class="dashboard-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Visão geral</h2>
+                    <p>Acompanhe as informações do catálogo.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+                    <div class="stat-icon purple">🎮</div>
+                    <div>
+                        <p>Total de jogos</p>
+                        <h3 id="totalJogos">0</h3>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <div>
+                        <p>Jogos ativos</p>
+                        <h3 id="jogosAtivos">0</h3>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon orange">R$</div>
+                    <div>
+                        <p>Preço médio</p>
+                        <h3 id="precoMedio">R$ 0,00</h3>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CADASTRO DE JOGOS -->
+        <section id="jogos" class="admin-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2 id="tituloFormulario">Cadastrar jogo</h2>
+                    <p>
+                        Preencha as informações para adicionar um jogo ao catálogo.
+                    </p>
+                </div>
+
+                <span class="section-tag">CATÁLOGO</span>
+            </div>
+
+
+            <form id="formJogo" class="game-form">
+
+                <input type="hidden" id="jogoId">
+
+                <div class="form-grid">
+
+                    <div class="form-group full-width">
+                        <label for="titulo">Nome do jogo *</label>
+                        <input
+                            type="text"
+                            id="titulo"
+                            placeholder="Ex.: Elden Ring"
+                            maxlength="120"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="descricao">Descrição *</label>
+                        <textarea
+                            id="descricao"
+                            placeholder="Descreva o jogo..."
+                            rows="4"
+                            maxlength="2000"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preco">Preço (R$) *</label>
+                        <input
+                            type="number"
+                            id="preco"
+                            min="0"
+                            max="999999"
+                            step="0.01"
+                            placeholder="149.90"
+                            required
+                        >
+                        <small>Use 0 para jogos gratuitos.</small>
+                    </div>
+<div class="form-group full-width">
+    <label>Gêneros do jogo *</label>
+
+    <div class="genres-grid" id="generos">
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Ação">
+            <span>Ação</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Aventura">
+            <span>Aventura</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="RPG">
+            <span>RPG</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="FPS">
+            <span>FPS</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Estratégia">
+            <span>Estratégia</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Terror">
+            <span>Terror</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Corrida">
+            <span>Corrida</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Esportes">
+            <span>Esportes</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Indie">
+            <span>Indie</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Simulação">
+            <span>Simulação</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Sobrevivência">
+            <span>Sobrevivência</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Plataforma">
+            <span>Plataforma</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Luta">
+            <span>Luta</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="MMORPG">
+            <span>MMORPG</span>
+        </label>
+
+        <label class="genre-option">
+            <input type="checkbox" name="generos" value="Mundo aberto">
+            <span>Mundo aberto</span>
+        </label>
+
+    </div>
+
+    <small>Selecione todos os gêneros que se aplicam ao jogo.</small>
+</div>
+
+                    <div class="form-group">
+                        <label for="plataforma">Plataforma principal *</label>
+                        <select id="plataforma" required>
+                            <option value="">Selecione</option>
+                            <option value="PC">PC</option>
+                            <option value="PlayStation">PlayStation</option>
+                            <option value="Xbox">Xbox</option>
+                            <option value="Nintendo">Nintendo</option>
+                            <option value="Mobile">Mobile</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="classificacao">Classificação etária *</label>
+                        <select id="classificacao" required>
+                            <option value="">Selecione</option>
+                            <option value="L">Livre</option>
+                            <option value="10">10 anos</option>
+                            <option value="12">12 anos</option>
+                            <option value="14">14 anos</option>
+                            <option value="16">16 anos</option>
+                            <option value="18">18 anos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="imagem">URL da imagem de capa *</label>
+                        <input
+                            type="url"
+                            id="imagem"
+                            placeholder="https://exemplo.com/imagem.jpg"
+                            maxlength="2048"
+                            required
+                        >
+                        <small>
+                            Cole o endereço público da imagem. Não é necessário baixar o arquivo.
+                        </small>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="ativo">Disponibilidade na loja</label>
+                        <select id="ativo">
+                            <option value="1">Ativo — aparece na loja</option>
+                            <option value="0">Inativo — oculto da loja</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+
+                    <button type="reset" id="btnLimpar" class="secondary-button">
+                        Limpar campos
+                    </button>
+
+                    <button type="submit" id="btnSalvar" class="primary-button">
+                        + Cadastrar jogo
+                    </button>
+
+                </div>
+
+                <p id="mensagemFormulario" class="form-message" role="status"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- LISTA DE JOGOS -->
+        <section class="admin-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Jogos cadastrados</h2>
+                    <p>Consulte e gerencie os produtos da loja.</p>
+                </div>
+            </div>
+
+            <div class="table-toolbar">
+
+                <input
+                    type="search"
+                    id="buscarJogoAdmin"
+                    placeholder="Buscar jogo pelo nome..."
+                    aria-label="Buscar jogo pelo nome"
+                >
+
+                <span id="quantidadeResultados">0 jogos</span>
+
+            </div>
+
+            <div class="table-container">
+
+                <table class="games-table">
+
+                    <thead>
+                        <tr>
+                            <th>Jogo</th>
+                            <th>Gênero</th>
+                            <th>Plataforma</th>
+                            <th>Preço</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelaJogos">
+
+                        <tr>
+                            <td colspan="6" class="empty-table">
+                                Nenhum jogo carregado.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p class="table-note">
+                Os jogos serão carregados do banco de dados quando a API estiver conectada.
+            </p>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer class="admin-footer">
+            <p>© 2026 NEXORA GAMES — Painel administrativo</p>
+            <span>Discover. Play. Level Up.</span>
+        </footer>
+
+    </main>
+
+    <script src="js/admin.js"></script>
+
+</body>
+</html>
